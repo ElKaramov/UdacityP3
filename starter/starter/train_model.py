@@ -8,8 +8,8 @@ trains a machine learning model.
 from sklearn.model_selection import train_test_split
 import pickle, os
 import pandas as pd
-from starter.ml.data import process_data
-from starter.ml.model import train_model, compute_model_metrics, inference, compute_slices
+from ml.data import process_data
+from ml.model import train_model, compute_model_metrics, inference, compute_slices
 # from model import compute_confusion_matrix
 import logging
 
