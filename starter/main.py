@@ -14,7 +14,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import pandas as pd
 import os, pickle
-from ml.data import process_data
+from starter.ml.data import process_data
 from contextlib import asynccontextmanager
  # path to saved artifacts
 savepath = './model'
