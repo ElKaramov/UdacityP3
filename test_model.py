@@ -8,8 +8,8 @@ import pytest, os, logging, pickle
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.exceptions import NotFittedError
-from starter.ml.model import inference, compute_model_metrics
-from starter.ml.data import process_data
+from src.ml.model import inference, compute_model_metrics
+from src.ml.data import process_data
 
 
 @pytest.fixture(scope="module")
