@@ -64,14 +64,14 @@ app = FastAPI(  title="Inference API",
                 version="1.0.0")
 
 # # load model artifacts on startup of the application to reduce latency
-# @asynccontextmanager
-# async def lifespan(app: FastAPI): 
-#     global model, encoder, lb
-#     # if saved model exits, load the model from disk
-#     if os.path.isfile(os.path.join(savepath,filename[0])):
-#         model = pickle.load(open(os.path.join(savepath,filename[0]), "rb"))
-#         encoder = pickle.load(open(os.path.join(savepath,filename[1]), "rb"))
-#         lb = pickle.load(open(os.path.join(savepath,filename[2]), "rb"))
+@asynccontextmanager
+async def lifespan(app: FastAPI): 
+    global model, encoder, lb
+    # if saved model exits, load the model from disk
+    if os.path.isfile(os.path.join(savepath,filename[0])):
+        model = pickle.load(open(os.path.join(savepath,filename[0]), "rb"))
+        encoder = pickle.load(open(os.path.join(savepath,filename[1]), "rb"))
+        lb = pickle.load(open(os.path.join(savepath,filename[2]), "rb"))
 
 
 @app.get("/")
